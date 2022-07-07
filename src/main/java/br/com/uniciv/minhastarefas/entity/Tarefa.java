@@ -1,10 +1,7 @@
 package br.com.uniciv.minhastarefas.entity;
 
 import br.com.uniciv.minhastarefas.enums.TarefaStatus;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -43,7 +40,7 @@ public class Tarefa {
 	
 	private boolean visivel;
 	
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@JoinColumn(nullable = false)
 	private TarefaCategoria categoria;
 	
