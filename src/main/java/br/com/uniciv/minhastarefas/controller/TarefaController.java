@@ -20,7 +20,7 @@ public class TarefaController {
 
 	@Autowired
 	private TarefaRepository repositorio;
-	
+
 	@GetMapping("/tarefa")
 	public List<Tarefa> todasTarefas(@RequestParam Map<String, String> parametros) {
 		if (parametros.isEmpty())
@@ -31,7 +31,7 @@ public class TarefaController {
 	}
 	
 	@GetMapping("/tarefa/{id}")
-	public Tarefa umaTarefa(@PathVariable Integer id) {
+	public Tarefa getByIdTarefa(@PathVariable Integer id) {
 		return repositorio.findById(id).orElse(null);
 	}
 	
